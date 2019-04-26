@@ -1,0 +1,28 @@
+@import './reset.scss';
+@font-face{
+    font-family: RobotoCondensed;
+    src: url(../app/assets/roboto-condensed.light.ttf) format('truetype');
+    font-weight: 800;
+}
+@font-face{
+    font-family: EconomicaBold;
+    src: url(../app/assets/economica-bold.ttf) format('truetype');
+}
+.mainComponent{
+    font-family: 'RobotoCondensed';
+    h1,h2,h3,h4,h5,h6{
+        font-family: 'EconomicaBold';
+    }
+    button{
+        display: block;
+        margin:  10px auto;
+        width: 173px;
+        height: 30px;
+        cursor: pointer;
+        font-size: 20px;
+        border: 1px grey outset;
+        background-color: white;
+    }
+    margin: 5px;
+    text-align: center;
+}
