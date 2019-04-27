@@ -1,7 +1,8 @@
 import React,{Component} from 'react';
 import ArtistGallery from './ArtistGallery.jsx';
+import ArtistSongs from './ArtistSongs.jsx';
 class Main extends Component{
-    state ={artistQuery: '',artist: [],tracks : []};
+    state ={artistQuery: '',artist: null,tracks : []};
 
     updateArtistQuery = event =>{
         this.setState({artistQuery: event.target.value})
@@ -16,7 +17,7 @@ class Main extends Component{
         fetch(`${BASE_URL}${this.state.artistQuery}`,{method:'GET'})
         .then(Response => Response.json())
         .then(json => {
-            if(json.artists.total > 0){
+            if(json.artists.total > 0 ){
                 const artist = json.artists.items[0];
                 this.setState({artist})
 
@@ -31,7 +32,7 @@ class Main extends Component{
     }
 
     render(){
-        console.log('state',this.state);
+        console.log('tracks',this.state.tracks);
         return(
             <div className="mainComponent" >
             <h1>Music Master</h1>
@@ -40,9 +41,16 @@ class Main extends Component{
             onChange={this.updateArtistQuery}
             type="text" placeholder="Search for an artist"/>
             <button onClick={this.searchArtist}>Search</button>
- 
+            <section className='artistGallery'>
+                <ArtistGallery artist={this.state.artist}/>
+            </section>
+
+            <section className='artistSongs'>
+                    <ArtistSongs tracks={this.state.tracks} />
+            </section>
             </div >
         )
     }
 }
+
 export default Main;
