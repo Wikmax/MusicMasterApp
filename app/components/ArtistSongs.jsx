@@ -5,24 +5,31 @@ class ArtistSongs extends Component {
         const tracks = [this.props.tracks];
         return (
             <div>
-                {tracks.map((item) => {
-                    item.map((song,songId)=>{
+                {tracks.map((item,key) => {
+                    return(
+                        <div key={key}>
+                        {
+                        item.map((song,key)=>{
                         let {name,preview_url,album} = song
-                        console.log("second log", name)
                         return (
-                            <div key={songId}>
-                            halo
+                            <div key={key}>
                                 <p>{name}</p>
-                                <p>Hej</p>
-                                {/* <img src={album} alt="image" /> */}
+                                <video controls poster={album.images[0].url}>
+                                    <source src={preview_url} type="video/mp4"></source>
+                                </video>
                             </div>
                         )
-                    })
+                    })  
+                        }
+                        </div>
+                    )
+
                 })
                 }
             </div>
         )
     }
+    
 }
 
 export default ArtistSongs

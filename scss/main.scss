@@ -34,3 +34,27 @@
         border-radius: 50%;
     }
 }
+.artistSongs{
+    width: 1439px;
+    margin: 10px auto;
+    div{
+        width: 1439px;
+        div{
+            display: flex;
+            text-align: center;
+            margin: 20px;
+            position: relative;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 1439px;
+            div{
+                width: 200px;
+                height: 200px;
+            video{
+                width: 200px;
+                height: 200px;
+            }
+        }
+        }
+    }
+}

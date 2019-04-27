@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import ArtistGallery from './ArtistGallery.jsx';
 import ArtistSongs from './ArtistSongs.jsx';
+
 class Main extends Component{
     state ={artistQuery: '',artist: null,tracks : []};
 
@@ -24,7 +25,8 @@ class Main extends Component{
                 fetch(`${BASE_URL}${artist.id}/top-tracks`)
                     .then(Response=>Response.json())
                     .then(json => {
-                        this.setState({tracks:json.tracks})                    })
+                        this.setState({tracks:json.tracks})
+                    })
                     .catch(error => error.message);
             }
         })
@@ -32,7 +34,6 @@ class Main extends Component{
     }
 
     render(){
-        console.log('tracks',this.state.tracks);
         return(
             <div className="mainComponent" >
             <h1>Music Master</h1>
