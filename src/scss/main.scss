@@ -1,12 +1,12 @@
 @import './reset.scss';
 @font-face{
     font-family: RobotoCondensed;
-    src: url(../app/assets/roboto-condensed.light.ttf) format('truetype');
+    src: url(../assets/roboto-condensed.light.ttf#) format('truetype');
     font-weight: 800;
 }
 @font-face{
     font-family: EconomicaBold;
-    src: url(../app/assets/economica-bold.ttf) format('truetype');
+    src: url(../assets/economica-bold.ttf) format('truetype');
 }
 .mainComponent{
     font-family: 'RobotoCondensed';
